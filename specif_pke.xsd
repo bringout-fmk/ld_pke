@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2009 (http://www.altova.com) by Imamovic Bojan (xy) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:SpecifikacijaZahtjevaZaIzdavanjePorezneKartice_V1_0.xsd" targetNamespace="urn:SpecifikacijaZahtjevaZaIzdavanjePorezneKartice_V1_0.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" id="SpecifikacijaZahtjevaZaIzdavanjePorezneKartice">
+	<xs:element name="SpecifikacijaZahtjevaZaIzdavanjePorezneKartice">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PodaciOPoslodavcu" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="JIBPoslodavca" type="type_JMB" />
+							<xs:element name="NazivPoslodavca" type="xs:string" />
+							<xs:element name="BrojZahtjeva" type="xs:int" />
+							<xs:element name="DatumPodnosenja" type="xs:date" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Obrazac1001" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Dio1PodaciOPoreznomObvezniku" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Prezime" type="xs:string" minOccurs="0">
+										</xs:element>
+										<xs:element name="Ime" type="xs:string" minOccurs="0">
+										</xs:element>
+										<xs:element name="ImeJednogRoditelja" type="xs:string" minOccurs="0">
+										</xs:element>
+										<xs:element name="JMB" type="type_JMB" minOccurs="0" />
+										<xs:element name="AdresaPrebivalista" type="xs:string" minOccurs="0" />
+										<xs:element name="OpcinaPrebivalistaNaziv" type="xs:string" minOccurs="0" />
+										<xs:element name="OpcinaPrebivalistaKod" type="xs:string" minOccurs="0" />
+										<xs:element name="DatumRodjenja" type="xs:date" minOccurs="0" />
+										<xs:element name="Telefon" type="type_Telefon" minOccurs="0" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Dio2PodaciOPoslodavcu" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NazivPoslodavca" type="xs:string" minOccurs="0">
+										</xs:element>
+										<xs:element name="JIB_JMBPoslodavca" type="type_JMB" minOccurs="0">
+										</xs:element>
+										<xs:element name="Zaposlen" type="xs:boolean" minOccurs="0" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Dio3PodaciOLicnimOdbicima" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OsnovniLicniOdbitak" type="type_Koeficijent_Polje12" minOccurs="0" />
+										<xs:element name="OdbiciZaIzdrzavanogBracnogDruga" type="type_Koeficijent_Dio3" minOccurs="0" />
+										<xs:element name="UkupanOdbitakZaIzdzavanuDjecu" type="type_Koeficijent_Dio3" minOccurs="0" />
+										<xs:element name="UkupanOdbitakZaIzdzavaneClanovePorodice" type="type_Koeficijent_Dio3" minOccurs="0" />
+										<xs:element name="UkupanOdbitakZaIzdzavaneClanovePorodiceSaInvaliditetom" type="type_Koeficijent_Dio3" minOccurs="0" />
+										<xs:element name="UkupanFaktorLicnogOdbitka" type="type_Koeficijent_Dio3" minOccurs="0" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Dio4PodaciOIzdrzavanomBracnomDugu" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PrezimeIIme" type="xs:string" minOccurs="0" />
+										<xs:element name="JMB" type="type_JMB" minOccurs="0" />
+										<xs:element name="VlastitiPrihod" type="type_Money" minOccurs="0" />
+										<xs:element name="UdioUIzdrzavanju" type="type_Percent" minOccurs="0" />
+										<xs:element name="KoeficijentOdbitka" type="type_Koeficijent_Dio4" minOccurs="0" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Dio5PodaciOIzdrzavanojDjeci" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PodaciOIzdrzavanojDjeci" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="PrezimeIIme" type="xs:string" minOccurs="0" />
+													<xs:element name="JMB" type="type_JMB" minOccurs="0" />
+													<xs:element name="VlastitiPrihod" type="type_Money" minOccurs="0" />
+													<xs:element name="UdioUIzdrzavanju" type="type_Percent" minOccurs="0" />
+													<xs:element name="KoeficijentOdbitka" type="type_Koeficijent_Dio5" minOccurs="0" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Dio6PodaciOIzdrzavanimClanovimaUzePorodice" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PodaciOIzdrzavanimClanovimaUzePorodice" minOccurs="0" maxOccurs="unbounded" type="PodaciOIzdrzavanimClanovimaUzePorodice">
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Dio7PodaciOIzdrzavanimClanovimaUzePorodiceSaInvaliditetom" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PodaciOIzdrzavanimClanovimaUzePorodiceSaInvaliditetom" minOccurs="0" maxOccurs="unbounded" type="PodaciOIzdrzavanimClanovimaUzePorodice">
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Dio8IzjavaPoreznogObveznika">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="VaziOd" type="xs:date" minOccurs="0" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="type_JMB">
+		<xs:restriction base="xs:string">
+			<xs:length value="13" />
+			<xs:pattern value="[0-9]{13}" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_Money">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2" />
+			<xs:maxInclusive value="9999999.99" />
+			<xs:minInclusive value="0.00" />
+			<xs:totalDigits value="9" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_Percent">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="0" />
+			<xs:maxInclusive value="100" />
+			<xs:minInclusive value="0" />
+			<xs:totalDigits value="3" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_Telefon">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="14" />
+			<xs:minLength value="13" />
+			<xs:pattern value="\d{3}-\d{2}-\d{6,7}" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="PodaciOIzdrzavanimClanovimaUzePorodice">
+		<xs:sequence>
+			<xs:element name="PrezimeIIme" type="xs:string" minOccurs="0" />
+			<xs:element name="JMB" type="type_JMB" minOccurs="0" />
+			<xs:element name="SrodstvoSaPoreznimObveznikomNaziv" type="xs:string" minOccurs="0" />
+			<xs:element name="SrodstvoSaPoreznimObveznikomKod" type="xs:string" />
+			<xs:element name="VlastitiPrihod" type="type_Money" minOccurs="0" />
+			<xs:element name="UdioUIzdrzavanju" type="type_Percent" minOccurs="0" />
+			<xs:element name="KoeficijentOdbitka" type="type_Koeficijent_Dio6_Dio7" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="type_Koeficijent_Polje12">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="3" />
+			<xs:totalDigits value="4" />
+			<xs:maxInclusive value="1.000" />
+			<xs:minInclusive value="1.000" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_Koeficijent_Dio3">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="3" />
+			<xs:totalDigits value="4" />
+			<xs:maxInclusive value="9.999" />
+			<xs:minInclusive value="0.000" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_Koeficijent_Dio4">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="3" />
+			<xs:totalDigits value="4" />
+			<xs:maxInclusive value="0.500" />
+			<xs:minInclusive value="0.000" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_Koeficijent_Dio5">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="3" />
+			<xs:totalDigits value="4" />
+			<xs:maxInclusive value="0.900" />
+			<xs:minInclusive value="0.000" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_Koeficijent_Dio6_Dio7">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="3" />
+			<xs:totalDigits value="4" />
+			<xs:maxInclusive value="0.300" />
+			<xs:minInclusive value="0.300" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
