@@ -94,7 +94,7 @@ node_podaci_poslodavac = XML::Node.new('PodaciOPoslodavcu')
 
 sub_nodes = [
    XML::Node.new('JIBPoslodavca', osn_podaci['p_jib']),
-   XML::Node.new('NazivPoslodavca', osn_podaci['p_naz']),
+   XML::Node.new('NazivPoslodavca', osn_podaci['p_naziv']),
    XML::Node.new('BrojZahtjeva', broj_zahtjeva ),
    XML::Node.new('DatumPodnosenja', '2009-07-01')
 ]
